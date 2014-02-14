@@ -15,7 +15,7 @@ from json import dumps as json_dumps, loads as json_loads
 from jsonschema.validators import Draft3Validator
 from .exceptions import GeneralError, MissingParameterError, ValidationError
 
-__version__ = '0.0.4'
+__version__ = '0.0.5'
 __useragent__ = 'pyxarf %s' % (__version__)
 
 class Xarf(object):
