@@ -6,6 +6,9 @@ __version__ = None
 here = os.path.abspath(os.path.dirname(__file__))
 name = 'pyxarf'
 
+with open('%s/version.txt' % here) as f:
+    __version__ = f.readline().strip()
+
 with open('%s/requirements.txt' % here) as f:
     requires = f.readlines()
 
@@ -34,8 +37,6 @@ os.path.abspath('../{name}/')
     '''.format(name=name, version=__version__)
             )
 
-with open('%s/version.txt' % here) as f:
-    __version__ = f.readline().strip()
 
 setup(
     name=name,
