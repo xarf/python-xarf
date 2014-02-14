@@ -1,0 +1,12 @@
+Attachment: text/plain
+Category: abuse
+Date: Feb  3 2014 02:13:35 +0100
+Port: 22
+Report-ID: '1234567'
+Report-Type: login-attack
+Reported-From: xarf-reports@example.com
+Schema-URL: http://www.x-arf.org/schema/abuse_login-attack_0.1.1.json
+Service: ssh
+Source: 83.169.54.26
+Source-Type: ip-address
+User-Agent: pyxarf 0.0.1

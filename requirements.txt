@@ -1,0 +1,5 @@
+jsonschema==2.3.0
+PyYAML==3.10
+dnspython==1.11.1
+ipaddr==2.1.11
+querycontacts==0.2.1

@@ -1,0 +1,9 @@
+*.pyc
+/dist
+/build
+/*.egg-info/
+*.sublime-*
+*.ini
+*.so
+/docs/doctrees/
+/docs/html/
