@@ -366,6 +366,8 @@ class Xarfutil(object):
                 report.machine_readable['Source-Type'][:2] == 'ip':
             try:
                 mail_to = lookup_contact(report.machine_readable['Source'])
+            except ImportError:
+                raise
             except:
                 pass
 
