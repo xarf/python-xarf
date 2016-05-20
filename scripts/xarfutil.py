@@ -199,8 +199,8 @@ class Xarfutil(object):
             help='subject of report'
         )
         self._add_group_argument(group_4, '--mail-to',
-            type=str, metavar='<receiptent>',
-            help='receiptent of report'
+            type=str, metavar='<recipient>',
+            help='recipient of report'
         )
 
     def _check_file_parameters(self):

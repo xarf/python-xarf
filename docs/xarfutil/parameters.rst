@@ -12,7 +12,7 @@ Command Line Parameters
 [`--output-email`_] [`--mail-server-host`_ <hostname>]
 [`--mail-server-port`_ <port>] [`--mail-server-user`_ <username>]
 [`--mail-server-pass`_ <password>] [`--mail-from`_ <from>]
-[`--mail-subject`_ <subject>] [`--mail-to`_ <receiptent>]
+[`--mail-subject`_ <subject>] [`--mail-to`_ <recipient>]
 [`args`_ [`args`_ ...]]
 
 .. seealso::
@@ -266,6 +266,6 @@ Sets the subject of the X-ARF report mail.
 --mail-to
 ~~~~~~~~~
 
-Sets the receiptent of the X-ARF report mail.
+Sets the recipient of the X-ARF report mail.
 
 
