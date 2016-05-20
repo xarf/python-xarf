@@ -2,16 +2,20 @@ import smtplib
 from email import charset
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from querycontacts import ContactFinder
 
 
 charset.add_charset('utf-8', charset.SHORTEST, charset.QP)
-cf = ContactFinder()
+
+try:
+    from querycontacts import ContactFinder
+    cf = ContactFinder()
+except ImportError as exception:
+    cf = exception
 
 
 def lookup_contact(ip):
     '''
-    uses querycontacts to lookup abuse contact(s) for given ip
+    uses querycontacts if available to lookup abuse contact(s) for given ip
 
     :param ip: ip to lookup abuse contact for
     :type ip: str
@@ -20,8 +24,13 @@ def lookup_contact(ip):
     :rtype: list
     :rtype: none
 
+    :raises: :py:class:`ImportError`
+
     '''
-    return cf.find(ip)
+    if isinstance(cf, ImportError):
+        raise cf
+    else:
+        return cf.find(ip)
 
 
 class SMTPException(Exception): pass
