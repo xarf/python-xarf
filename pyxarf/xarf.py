@@ -246,7 +246,7 @@ class Xarf(object):
                 self._debug('downloading schema', schema_url)
                 req = urllib2.Request(schema_url, headers=self.http_headers)
                 res = urllib2.urlopen(req)
-                schema = res.read()
+                schema = res.read().decode("utf-8")
 
                 self._debug('downloaded schema:', schema)
             except Exception as error:
