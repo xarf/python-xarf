@@ -3,6 +3,10 @@
 :copyright: (c) 2014 by abusix GmbH
 :license: Apache2, see LICENSE.txt for more details.
 '''
+from __future__ import print_function
+
+import logging
+
 from sys import exit, argv
 from argparse import ArgumentParser, FileType, SUPPRESS
 from pyxarf import Xarf
@@ -454,7 +458,7 @@ if __name__ == '__main__':
             % (e, ' --'.join(e.missing_parameters).replace('_', '-'))
         )
     except ValidationError as e:
-        print 'error: validation failed! reason(s):\n%s' % e
+        exit('error: validation failed! reason(s):\n%s' % e)
 
     if 'send_email' in util.args:
         raw_email = util.to_mail(report)
@@ -484,5 +488,5 @@ if __name__ == '__main__':
         else:
             exit('Report sent.')
     else:
-        print util.get_report(report)
+        print(util.get_report(report))
 

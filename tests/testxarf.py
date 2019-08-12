@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # import logging
+from __future__ import print_function
+
 from pyxarf import Xarf
 
 # logger = logging.getLogger('pyxarf')
@@ -13,7 +15,7 @@ from pyxarf import Xarf
 
 report = Xarf(
     evidence='evidence data belongs here',
-    schema_url='http://www.x-arf.org/schema/abuse_login-attack_0.1.1.json',
+    schema_url='http://xarf.org/schema/abuse_login-attack_0.1.2.json',
     schema_cache='/tmp/',
     reported_from='reporter@example.com',
     category='abuse',
@@ -27,7 +29,7 @@ report = Xarf(
     service='ssh',
 )
 
-print report.to_yaml()
+print(report.to_yaml())
 
 test_data = {
     'Reported-From': 'reporter@example.com',
@@ -39,7 +41,7 @@ test_data = {
     'Source': '83.169.54.26',
     'Port': 22,
     'Report-ID': '1231231',
-    'Schema-URL': 'http://www.x-arf.org/schema/abuse_login-attack_0.1.1.json',
+    'Schema-URL': 'http://xarf.org/schema/abuse_login-attack_0.1.2.json',
     'Attachment': 'text/plain',
 }
 evidence = '''
@@ -52,7 +54,7 @@ in a toy store, because you're here shopping for an infant named Jeb.
 '''
 
 report = Xarf.from_machine_readable(test_data, evidence)
-print report.to_yaml()
+print(report.to_yaml())
 
 
 

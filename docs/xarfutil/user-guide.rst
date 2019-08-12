@@ -19,7 +19,7 @@ validated report data is printed to `stdout` in YAML format.
 ::
 
     $ python xarfutil.py --evidence 'sample evidence data' --greeting 'greeting text here' \
-        --schema-url 'http://www.x-arf.org/schema/abuse_login-attack_0.1.1.json' \
+        --schema-url 'http://xarf.org/schema/abuse_login-attack_0.1.2.json' \
         --schema-cache '/tmp/' --reported-from 'xarf-reports@example.com' \
         --category 'abuse' --report-type 'login-attack' --report-id '1234567' \
         --date 'Feb  3 2014 02:13:35 +0100' --source '83.169.54.26' \
@@ -34,7 +34,7 @@ validated report data is printed to `stdout` in YAML format.
       Report-ID: '1234567'
       Report-Type: login-attack
       Reported-From: xarf-reports@example.com
-      Schema-URL: http://www.x-arf.org/schema/abuse_login-attack_0.1.1.json
+      Schema-URL: http://xarf.org/schema/abuse_login-attack_0.1.2.json
       Service: ssh
       Source: 83.169.54.26
       Source-Type: ip-address
@@ -63,7 +63,7 @@ some sample text and are omitted for readability.
     Report-ID: '1234567'
     Report-Type: login-attack
     Reported-From: xarf-reports@example.com
-    Schema-URL: http://www.x-arf.org/schema/abuse_login-attack_0.1.1.json
+    Schema-URL: http://xarf.org/schema/abuse_login-attack_0.1.2.json
     Service: ssh
     Source: 83.169.54.26
     Source-Type: ip-address
@@ -79,7 +79,7 @@ some sample text and are omitted for readability.
       Report-ID: '1234567'
       Report-Type: login-attack
       Reported-From: xarf-reports@example.com
-      Schema-URL: http://www.x-arf.org/schema/abuse_login-attack_0.1.1.json
+      Schema-URL: http://xarf.org/schema/abuse_login-attack_0.1.2.json
       Service: ssh
       Source: 83.169.54.26
       Source-Type: ip-address
@@ -98,7 +98,7 @@ the correct mail options and using the command line parameter `--send-email`.
 
     $ python xarfutil.py --evidence 'sample evidence data' \
     --greeting 'greeting text here' \
-    --schema-url 'http://www.x-arf.org/schema/abuse_login-attack_0.1.1.json' \
+    --schema-url 'http://xarf.org/schema/abuse_login-attack_0.1.2.json' \
     --schema-cache '/tmp/' --reported-from 'xarf@example.org' \
     --category 'abuse' --report-type 'login-attack' --report-id '1234567' \
     --date 'Feb  3 2014 02:13:35 +0100' --source '83.169.54.26' \
@@ -130,7 +130,7 @@ the raw email, using the `--output-email` switch, as shown below.
 
     $ python xarfutil.py --evidence 'sample evidence data' \
     --greeting 'greeting text here' \
-    --schema-url 'http://www.x-arf.org/schema/abuse_login-attack_0.1.1.json' \
+    --schema-url 'http://xarf.org/schema/abuse_login-attack_0.1.2.json' \
     --schema-cache '/tmp/' --reported-from 'xarf@example.org' \
     --category 'abuse' --report-type 'login-attack' --report-id '1234567' \
     --date 'Feb  3 2014 02:13:35 +0100' --source '83.169.54.26' \
@@ -165,7 +165,7 @@ the raw email, using the `--output-email` switch, as shown below.
     Report-ID: '1234567'
     Report-Type: login-attack
     Reported-From: xarf@example.org
-    Schema-URL: http://www.x-arf.org/schema/abuse_login-attack_0.1.1.json
+    Schema-URL: http://xarf.org/schema/abuse_login-attack_0.1.2.json
     Service: ssh
     Source: 83.169.54.26
     Source-Type: ip-address
@@ -197,7 +197,7 @@ a detailed error message is shown.
 
     $ python xarfutil.py --evidence 'sample evidence data' \
     --greeting 'greeting text here' \
-    --schema-url 'http://www.x-arf.org/schema/abuse_login-attack_0.1.1.json' \
+    --schema-url 'http://xarf.org/schema/abuse_login-attack_0.1.2.json' \
     --schema-cache '/tmp/' --reported-from 'xarf-reports@example.com' \
     --category 'abuse' --report-type 'login-attack' --report-id '1234567' \
     --date 'Feb  3 2014 02:13:35 +0100' --source '83.169.54.26' \

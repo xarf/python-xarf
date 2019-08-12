@@ -1,1 +1,1 @@
-from xarfmail import SMTP, XarfMail, MultiPartMail, lookup_contact
+from xarfmail.xarfmail import SMTP, XarfMail, MultiPartMail, lookup_contact

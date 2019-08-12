@@ -7,8 +7,9 @@ pyxarf - easy x-arf report generation
 for more information see: https://docs.abusix.com/pyxarf/
 
 '''
-import urllib2
 import logging
+import requests
+
 from os.path import isfile
 from yaml import dump as yaml_dumps
 from json import dumps as json_dumps, loads as json_loads
@@ -244,9 +245,8 @@ class Xarf(object):
         if not schema:
             try:
                 self._debug('downloading schema', schema_url)
-                req = urllib2.Request(schema_url, headers=self.http_headers)
-                res = urllib2.urlopen(req)
-                schema = res.read().decode("utf-8")
+                response = requests.get(schema_url, headers=self.http_headers)
+                schema = response.text
 
                 self._debug('downloaded schema:', schema)
             except Exception as error:

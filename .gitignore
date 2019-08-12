@@ -7,3 +7,4 @@
 *.so
 /docs/doctrees/
 /docs/html/
+.vscode/

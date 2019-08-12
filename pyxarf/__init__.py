@@ -1,1 +1,1 @@
-from xarf import Xarf
+from pyxarf.xarf import Xarf
