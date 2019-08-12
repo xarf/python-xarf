@@ -345,7 +345,24 @@ class Xarfutil(object):
                     settings[setting] = self.args[setting]
         return settings
 
-    def to_mail(self, report):
+    def get_mail_to(self):
+        mail_settings = self.get_mail_settings()
+        mail_to = None
+        if 'mail_to' in mail_settings:
+            mail_to = mail_settings['mail_to']
+        if 'lookup_contact' in util.args and \
+                report.machine_readable['Source-Type'][:2] == 'ip':
+            try:
+                mail_to = lookup_contact(report.machine_readable['Source'])
+            except ImportError:
+                raise
+            except:
+                pass
+        if not mail_to:
+            exit("You have to supply a to mail address either by using --mail-to or --lookup-contact")
+        return mail_to
+
+    def to_mail(self, report, mail_to=None):
         '''
         returns the raw email of the specified xarf report_obj
 
@@ -358,22 +375,16 @@ class Xarfutil(object):
         '''
         greeting = ''
 
+        if not mail_to:
+            mail_to = self.get_mail_to()
+
         mail_settings = self.get_mail_settings()
-        mail_to = mail_settings['mail_to']
         mail_from = mail_settings['mail_from']
         subject = mail_settings['mail_subject']
 
         if 'greeting' in util.args:
             greeting = util.args['greeting']
 
-        if 'lookup_contact' in util.args and \
-                report.machine_readable['Source-Type'][:2] == 'ip':
-            try:
-                mail_to = lookup_contact(report.machine_readable['Source'])
-            except ImportError:
-                raise
-            except:
-                pass
 
         self.mail_obj = XarfMail(report, mail_from, mail_to, subject, greeting)
         return str(self.mail_obj)
@@ -461,10 +472,10 @@ if __name__ == '__main__':
         exit('error: validation failed! reason(s):\n%s' % e)
 
     if 'send_email' in util.args:
-        raw_email = util.to_mail(report)
+        mail_to = util.get_mail_to()
+        raw_email = util.to_mail(report, mail_to)
 
         mail_settings = util.get_mail_settings()
-        mail_to = mail_settings['mail_to']
         mail_from = mail_settings['mail_from']
         username = None
         password = None
