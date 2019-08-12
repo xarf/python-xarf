@@ -1,3 +1,8 @@
+[![PyPi Version](https://img.shields.io/pypi/v/pyxarf.svg)](https://pypi.python.org/pypi/pyxarf)
+[![PyPi License](https://img.shields.io/pypi/l/pyxarf.svg)](https://pypi.python.org/pypi/pyxarf)
+[![PyPi Versions](https://img.shields.io/pypi/pyversions/pyxarf.svg)](https://pypi.python.org/pypi/pyxarf)
+[![PyPi Wheel](https://img.shields.io/pypi/wheel/pyxarf.svg)](https://pypi.python.org/pypi/pyxarf)
+
 # pyxarf - easy x-arf report generation
 
 ## Introduction
